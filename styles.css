@@ -1,0 +1,29 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.canvas{
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+.program-settings-container{
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blue;
+    min-height: 100px;
+}
+
+
+.flex-item{
+    text-align: center;
+}
