@@ -16,17 +16,22 @@
             <div class="color-container flex-item">
                 <label for="colorInput" class="color-label">Color:</label>
                 <br>
-                <input type="text" name="color input" id="colorInput" class="color-input" placeholder="Enter a color" value="#04aa6d">
+                <input type="text" name="color input" id="colorInput" class="color-input" placeholder="Enter a color" value="#00ff0080">
             </div>
             <div class="frequency-container flex-item">
                 <label for="freqInput" class="freq-label">Frequency</label>
                 <br>
-                <input type="range" name="freqency input" id="freqInput" step="0.01" min="0.01" max="1" value="0.1">
+                <input type="range" name="freqency input" id="freqInput" step="0.01" min="0.001" max="1" value="0.001">
             </div>
             <div class="amp-container flex-item">
                 <label for="ampInput" class="amp-label">Amplitude</label>
                 <br>
-                <input type="text" name="Amplitude Input" id="ampInput" placeholder="Enter amplitude value" value="100">
+                <input type="range" min="10" value="100" name="Amplitude Input" id="ampInput" value="100">
+            </div>
+            <div class="speed-container flex-item">
+                <label for="speedInput" class="speed-label">Speed</label>
+                <br>
+                <input type="range" name="speed input" id="speedInput" min="0.01" max="0.25" step="0.01" value="0.01" class="speedInput">
             </div>
         </div>
     </div>
