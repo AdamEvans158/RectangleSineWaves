@@ -14,14 +14,14 @@ export default class Rectangle{
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    update(ctx, canvasHeight){
+    updateBottom(ctx, canvasHeight){
         this.i -= this.speed;
         this.height = Math.abs(Math.sin(this.i + this.x * this.freq)) * this.amp;
         this.y = canvasHeight - 100 - this.height;
         this.draw(ctx);
     }
 
-    update2(ctx){
+    updateTop(ctx){
         this.i -= this.speed;
         this.height = Math.abs(Math.sin(this.i + this.x * this.freq)) * this.amp;
         this.draw(ctx);
