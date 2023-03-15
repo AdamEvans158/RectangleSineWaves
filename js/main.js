@@ -26,7 +26,7 @@ let rectWidth = 20;
 let amp = 100;
 let freq = 0.01;
 let speed = 0.01;
-let color = "#00ff0080";
+let color = "#00ffff80";
 
 ctx.fillStyle = color;
 ctx.lineWidth = 2;
