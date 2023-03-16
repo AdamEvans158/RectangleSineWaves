@@ -8,8 +8,8 @@ canvas.height = canvas.getBoundingClientRect().height;
 // Sine Wave Input Elements 
 const sineInputs = document.getElementsByClassName("sine-input");
 
-ampInput.max = (canvas.height - 200) / 2; // Calculate max amplitude
-ampInput.value = (canvas.height - 200) / 2 / 2; // Set base amplitude to half of the max amplitude
+document.getElementById("ampInput").max = (canvas.height - 200) / 2; // Calculate max amplitude
+document.getElementById("ampInput").value = (canvas.height - 200) / 2 / 2; // Set base amplitude to half of the max amplitude
 
 let ctx = canvas.getContext('2d');
 
