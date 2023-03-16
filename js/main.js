@@ -5,12 +5,8 @@ const canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth;
 canvas.height = canvas.getBoundingClientRect().height;
 
-// Custom value input elements
-const colorInput = document.getElementById('colorInput');
-const freqInput = document.getElementById('freqInput');
-const ampInput = document.getElementById('ampInput');
-const speedInput = document.getElementById('speedInput');
-const widthInput = document.getElementById('widthInput');
+// Sine Wave Input Elements 
+const sineInputs = document.getElementsByClassName("sine-input");
 
 ampInput.max = (canvas.height - 200) / 2; // Calculate max amplitude
 ampInput.value = (canvas.height - 200) / 2 / 2; // Set base amplitude to half of the max amplitude
@@ -26,11 +22,10 @@ let rectWidth = 20;
 let amp = 100;
 let freq = 0.01;
 let speed = 0.01;
-let color = "#00ffff80";
+let color = "#00ff0080";
 
 ctx.fillStyle = color;
 ctx.lineWidth = 2;
-
 
 // Functions to add and reset the rectangles
 function addRects(){
@@ -51,6 +46,18 @@ function resetRects(){
     addRects();
 }
 
+function updateWaveValues(){
+    rectWidth = document.getElementById('widthInput').value;
+    freq = document.getElementById("freqInput").value;
+    amp = document.getElementById("ampInput").value;
+    speed = document.getElementById("speedInput").value;
+    color = document.getElementById("colorInput").value;
+
+    ctx.fillStyle = color;
+
+    resetRects();
+}
+
 // Draw Loop
 function animate(){
     requestAnimationFrame(animate);
@@ -69,42 +76,8 @@ function animate(){
 animate();
 
 // Event handlers for changes in the sine wave values
-colorInput.addEventListener("change", (e) => {
-    color = e.target.value;
-    ctx.fillStyle = color;
-})
-
-freqInput.addEventListener("input", (e) => {
-    freq = e.target.value;
-
-    for(let i = 0; i < bottomRectangles.length; i++){
-        bottomRectangles[i].freq = freq;
-        topRectangles[i].freq = freq;
-    }
-})
-
-ampInput.addEventListener("input", (e) => {
-    amp = e.target.value;
-
-    for(let i = 0; i < bottomRectangles.length; i++){
-        bottomRectangles[i].amp = amp;
-        topRectangles[i].amp = amp;
-    }
-
-})
-
-speedInput.addEventListener("input", (e) => {
-    speed = e.target.value;
-
-    for(let i = 0; i < bottomRectangles.length; i++){
-        bottomRectangles[i].speed = speed;
-        topRectangles[i].speed = -speed;
-    }
-
-})
-
-widthInput.addEventListener("input", (e) => {
-    rectWidth = e.target.value;
-
-    resetRects();
-})
+for(let i = 0; i < sineInputs.length; i++){
+    sineInputs[i].addEventListener("input", function(){ 
+        updateWaveValues();
+    })
+}
